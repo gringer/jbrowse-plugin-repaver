@@ -1,42 +1,10 @@
-# jbrowse-plugin-template
+# REPAVER
 
-> Template to quickly start a new JBrowse plugin
+REpetitive PAttern VisualisER for BED files created using Hashasher
 
-## Usage
-
-You can use this template to create a new GitHub repository or a new local
-project.
-
-### Software requirements
-
-- [git](https://git-scm.com/downloads)
-- [Node.js](https://nodejs.org/en/download/) (version 10 or greater)
-- [yarn](https://yarnpkg.com/en/docs/install) (or npm which comes with Node.js)
-- [JBrowse 2](https://github.com/gmod/jbrowse-components) (version 2.0 or
-  greater)
-
-### Create a new project from this template
-
-You can click the "Use this template" button in the repository (instructions
-[here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)):
-
-![screenshot showing where "Use this template" button is in the GitHub repository page](https://user-images.githubusercontent.com/25592344/102671843-eb8ae380-414c-11eb-84e5-6ebf10bd89f9.png)
-
-Or you can use the GitHub CLI:
-
-```console
-$ gh repo create jbrowse-plugin-my-project --template https://github.com/GMOD/jbrowse-plugin-template.git
-```
-
-Or you can start a plugin locally:
-
-```console
-$ git clone https://github.com/GMOD/jbrowse-plugin-template.git jbrowse-plugin-my-project
-$ cd jbrowse-plugin-my-project
-$ rm -rf .git
-$ # If you want to use Git, re-initialize it
-$ git init
-```
+This JBrowse2 plugin adds a new 'Repeat BED' track type to JBrowse2, which visualises
+repetitive elements in sequences, showing distances between the elements via a
+split log/linear scale.
 
 ## Getting started
 
