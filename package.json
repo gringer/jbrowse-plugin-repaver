@@ -1,6 +1,6 @@
 {
   "version": "0.0.1",
-  "name": "jbrowse-plugin-template",
+  "name": "jbrowse-plugin-repaver",
   "keywords": [
     "jbrowse",
     "jbrowse2"
@@ -19,7 +19,7 @@
     },
     "jbrowse": {
       "plugin": {
-        "name": "Template"
+        "name": "Repaver"
       }
     }
   },
@@ -48,7 +48,7 @@
     "postversion": "git push --follow-tags"
   },
   "jbrowse-plugin": {
-    "name": "Template"
+    "name": "Repaver"
   },
   "peerDependencies": {
     "@jbrowse/core": "^2.0.0"
@@ -102,5 +102,9 @@
     "tss-react": "^4.8.6",
     "typescript": "^5.3.3"
   },
-  "private": true
+  "private": true,
+  "description": "REpetitive PAttern VisualisER for BED files created using Hashasher",
+  "repository": "git@github.com:gringer/jbrowse-plugin-repaver.git",
+  "author": "David Eccles (gringer) <github@gringer.org>",
+  "license": "MIT"
 }

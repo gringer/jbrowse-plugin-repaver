@@ -1,4 +1,6 @@
-# REPAVER
+![Integration](git@github.com:gringer/jbrowse-plugin-repaver/workflows/Integration/badge.svg?branch=main)
+
+# jbrowse-plugin-repaver
 
 REpetitive PAttern VisualisER for BED files created using Hashasher
 
@@ -7,30 +9,6 @@ repetitive elements in sequences, showing distances between the elements via a
 split log/linear scale.
 
 ## Getting started
-
-### Setup
-
-Run `yarn init` (or `npm init`) and answer the prompts to fill out the
-information for your plugin
-
-- Make sure you at least enter a "name" (probably starting with
-  "jbrowse-plugin-", or "@myscope/jbrowse-plugin-" if you're going to publish to
-  an NPM organization)
-- Other fields may be left blank
-- leave the "entry point" as `dist/index.js`
-
-Now run `yarn` (or `rm yarn.lock && npm install` to use npm instead of yarn) to
-install the necessary dependencies.
-
-After this, run `yarn setup` (or `npm run setup`). This configures your project,
-and adds a build of JBrowse 2 that can be used to test your plugin during
-development.
-
-### Build
-
-```console
-$ yarn build ## or `npm run build`
-```
 
 ### Development
 
