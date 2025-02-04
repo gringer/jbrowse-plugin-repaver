@@ -10,5 +10,11 @@ const stateModel = types
     // unused but required by your view
     setWidth() {},
   }))
+  .views(() => ({
+    menuItems(): MenuItem[] {
+    // unused but required by your view
+    return []
+    },
+  }))
 
 export default stateModel
