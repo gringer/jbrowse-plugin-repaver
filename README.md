@@ -1,5 +1,3 @@
-![Integration](git@github.com:gringer/jbrowse-plugin-repaver/workflows/Integration/badge.svg?branch=main)
-
 # jbrowse-plugin-repaver
 
 REpetitive PAttern VisualisER for BED files created using Hashasher
