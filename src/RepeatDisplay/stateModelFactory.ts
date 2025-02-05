@@ -18,15 +18,15 @@ export function stateModelFactory(
   const WigglePlugin = pluginManager.getPlugin('WigglePlugin') as unknown as WigglePlugin
   const { linearWiggleDisplayModelFactory } = WigglePlugin.exports
   return types.compose(
-    'LinearManhattanDisplay',
+    'RepeatDisplay',
     linearWiggleDisplayModelFactory(pluginManager, configSchema),
     types
       .model({
-        type: types.literal('LinearManhattanDisplay'),
+        type: types.literal('RepeatDisplay'),
       })
       .views(() => ({
         get rendererTypeName() {
-          return 'LinearManhattanRenderer'
+          return 'RepeatRenderer'
         },
         get needsScalebar() {
           return true
@@ -65,4 +65,4 @@ export function stateModelFactory(
   )
 }
 
-export type LinearManhattanDisplayModel = ReturnType<typeof stateModelFactory>
+export type RepeatDisplayModel = ReturnType<typeof stateModelFactory>

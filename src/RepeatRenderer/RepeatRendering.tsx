@@ -8,7 +8,7 @@ import RBush from 'rbush'
 import type { Feature, SimpleFeatureSerialized } from '@jbrowse/core/util'
 import type { Region } from '@jbrowse/core/util/types'
 
-const LinearManhattanRendering = observer(function (props: {
+const RepeatRendering = observer(function (props: {
   regions: Region[]
   features: Map<string, Feature>
   bpPerPx: number
@@ -66,4 +66,4 @@ const LinearManhattanRendering = observer(function (props: {
   )
 })
 
-export default LinearManhattanRendering
+export default RepeatRendering

@@ -10,12 +10,12 @@ export function configSchemaFactory(pluginManager: PluginManager) {
   ) as unknown as LGVPlugin
   const { baseLinearDisplayConfigSchema } = LGVPlugin.exports
 
-  const LinearManhattanRendererConfigSchema = pluginManager.getRendererType(
-    'LinearManhattanRenderer',
+  const RepeatRendererConfigSchema = pluginManager.getRendererType(
+    'RepeatRenderer',
   )!.configSchema
 
   return ConfigurationSchema(
-    'LinearManhattanDisplay',
+    'RepeatDisplay',
     {
       autoscale: {
         type: 'stringEnum',
@@ -64,7 +64,7 @@ export function configSchemaFactory(pluginManager: PluginManager) {
         defaultValue: 'xyplot',
       },
       renderers: ConfigurationSchema('RenderersConfiguration', {
-        LinearManhattanRenderer: LinearManhattanRendererConfigSchema,
+        RepeatRenderer: RepeatRendererConfigSchema,
       }),
     },
     {

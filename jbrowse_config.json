@@ -70,11 +70,11 @@
       },
       "displays": [
         {
-          "type": "LinearManhattanDisplay",
-          "displayId": "human_chm13_repeats_125bp.bed.gz-1738746482758-sessionTrack-LinearManhattanDisplay-1738753314476",
+          "type": "RepeatDisplay",
+          "displayId": "human_chm13_repeats_125bp.bed.gz-repeatDisplay",
           "renderers": {
-            "LinearManhattanRenderer": {
-              "type": "LinearManhattanRenderer",
+            "RepeatRenderer": {
+              "type": "RepeatRenderer",
               "color": "jexl:get(feature, 'repeatClass')==\"F\" ? \"#8b000080\" : get(feature, 'repeatClass')==\"R\" ? \"#00A00080\" : get(feature, 'repeatClass')==\"RC\" ? \"#FF7F0080\" : get(feature, 'repeatClass')==\"C\" ? \"#A0900080\" : \"black\""
             }
           }

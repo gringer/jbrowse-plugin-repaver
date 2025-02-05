@@ -4,16 +4,16 @@ import ViewType from '@jbrowse/core/pluggableElementTypes/ViewType'
 import { AbstractSessionModel, isAbstractMenuManager } from '@jbrowse/core/util'
 import { version } from '../package.json'
 
-import LinearManhattanDisplayF from './LinearManhattanDisplay'
-import LinearManhattanRendererF from './LinearManhattanRenderer'
+import RepeatDisplayF from './RepeatDisplay'
+import RepeatRendererF from './RepeatRenderer'
 
 export default class RepaverPlugin extends Plugin {
   name = 'RepaverPlugin'
   version = version
 
   install(pluginManager: PluginManager) {
-    LinearManhattanDisplayF(pluginManager)
-    LinearManhattanRendererF(pluginManager)
+    RepeatDisplayF(pluginManager)
+    RepeatRendererF(pluginManager)
   }
 
   configure(pluginManager: PluginManager) {

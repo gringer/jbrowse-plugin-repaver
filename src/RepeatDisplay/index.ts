@@ -6,7 +6,7 @@ import { stateModelFactory } from './stateModelFactory'
 import PluginManager from '@jbrowse/core/PluginManager'
 import WigglePlugin from '@jbrowse/plugin-wiggle'
 
-export default function LinearManhattanDisplayF(pluginManager: PluginManager) {
+export default function RepeatDisplayF(pluginManager: PluginManager) {
   const WigglePlugin = pluginManager.getPlugin('WigglePlugin') as unknown as WigglePlugin
 
   const { LinearWiggleDisplayReactComponent } = WigglePlugin.exports
@@ -14,7 +14,7 @@ export default function LinearManhattanDisplayF(pluginManager: PluginManager) {
   pluginManager.addDisplayType(() => {
     const configSchema = configSchemaFactory(pluginManager)
     return new DisplayType({
-      name: 'LinearManhattanDisplay',
+      name: 'RepeatDisplay',
       configSchema,
       stateModel: stateModelFactory(pluginManager, configSchema),
       trackType: 'FeatureTrack',

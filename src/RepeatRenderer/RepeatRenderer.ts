@@ -26,7 +26,7 @@ export default function rendererFactory(pluginManager: PluginManager) {
     WiggleBaseRenderer,
   } = WigglePlugin.exports
 
-  return class ManhattanPlotRenderer extends WiggleBaseRenderer {
+  return class RepeatPlotRenderer extends WiggleBaseRenderer {
     async draw(ctx: CanvasRenderingContext2D, props: any) {
       const {
         features,
