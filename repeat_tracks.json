@@ -1,0 +1,11 @@
+  "tracks": [
+   {
+      "type": "FeatureTrack",
+      "name": "Repeat Elements",
+      "adapter": {
+        "type": "RepeatAdapter",
+        "bedtabixLocation": { "uri": "data/human_chm13_repeats_125bp.bed.gz" },
+        "indexLocation": { "uri": "data/human_chm13_repeats_125bp.bed.gz.tbi" }
+      }
+    }
+  ],
