@@ -39,8 +39,8 @@ const RepeatRendering = observer(function (props: {
     const ret = clickMap2.search({
       minX: offsetX,
       minY: offsetY,
-      maxX: offsetX + 3,
-      maxY: offsetY + 3,
+      maxX: offsetX + 2,
+      maxY: offsetY + 2,
     })
     return ret[0] ? new SimpleFeature(ret[0].feature) : undefined
   }

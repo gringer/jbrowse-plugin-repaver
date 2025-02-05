@@ -2,8 +2,24 @@ import { readConfObject } from '@jbrowse/core/configuration'
 import { featureSpanPx } from '@jbrowse/core/util'
 import RBush from 'rbush'
 
+import {
+  scaleLinear,
+  scaleLog,
+  scaleQuantize,
+} from '@mui/x-charts-vendor/d3-scale'
+
 import type PluginManager from '@jbrowse/core/PluginManager'
 import type WigglePlugin from '@jbrowse/plugin-wiggle'
+
+export const YSCALEBAR_LABEL_OFFSET = 5
+
+export interface ScaleOpts {
+  domain: number[]
+  range: number[]
+  scaleType: string
+  pivotValue?: number
+  inverted?: boolean
+}
 
 export function checkStopToken(stopToken?: string) {
   if (stopToken !== undefined) {
@@ -19,10 +35,46 @@ export function checkStopToken(stopToken?: string) {
   }
 }
 
+function getScale({
+  domain = [],
+  range = [],
+  scaleType,
+  pivotValue,
+  inverted,
+}: ScaleOpts) {
+  let scale:
+    | ReturnType<typeof scaleLinear<number>>
+    | ReturnType<typeof scaleLog<number>>
+    | ReturnType<typeof scaleQuantize<number>>
+  const [min, max] = domain
+  if (min === undefined || max === undefined) {
+    throw new Error('invalid domain')
+  }
+  if (scaleType === 'linear') {
+    scale = scaleLinear()
+  } else if (scaleType === 'log') {
+    scale = scaleLog().base(2)
+  } else if (scaleType === 'quantize') {
+    scale = scaleQuantize()
+  } else if (scaleType === 'repeat') {
+    scale = scaleLinear()
+  } else {
+    throw new Error('undefined scaleType')
+  }
+  scale.domain(pivotValue !== undefined ? [min, pivotValue, max] : [min, max])
+  scale.nice()
+
+  const [rangeMin, rangeMax] = range
+  if (rangeMin === undefined || rangeMax === undefined) {
+    throw new Error('invalid range')
+  }
+  scale.range(inverted ? range.slice().reverse() : range)
+  return scale
+}
+
 export default function rendererFactory(pluginManager: PluginManager) {
   const WigglePlugin = pluginManager.getPlugin('WigglePlugin') as unknown as WigglePlugin
   const {
-    utils: { getScale },
     WiggleBaseRenderer,
   } = WigglePlugin.exports
 
@@ -58,13 +110,16 @@ export default function rendererFactory(pluginManager: PluginManager) {
       const { isCallback } = config.color
       if (!isCallback) {
         ctx.fillStyle = config.color.value
+        ctx.strokeStyle = config.color.value
       }
+      ctx.lineWidth = 4
+      ctx.lineCap = "round"
       for (const feature of features.values()) {
         if (performance.now() - start > 200) {
           checkStopToken(stopToken)
           start = performance.now()
         }
-        const [leftPx] = featureSpanPx(feature, region, bpPerPx)
+        const [leftPx, rightPx] = featureSpanPx(feature, region, bpPerPx)
         const score = feature.get('score') as number
         const y = toY(score)
         if (
@@ -73,17 +128,18 @@ export default function rendererFactory(pluginManager: PluginManager) {
         ) {
           if (isCallback) {
             ctx.fillStyle = readConfObject(config, 'color', { feature })
+            ctx.strokeStyle = readConfObject(config, 'color', { feature })
           }
           ctx.beginPath()
           ctx.moveTo(leftPx, y)
-          ctx.arc(leftPx, y, 2, 0, 2 * Math.PI)
-          ctx.fill()
+          ctx.lineTo(rightPx, y)
+          ctx.stroke()
           lastRenderedBlobY = y
           lastRenderedBlobX = leftPx
           rbush.insert({
             minX: leftPx,
             minY: y,
-            maxX: leftPx + 4,
+            maxX: rightPx + 4,
             maxY: y + 4,
             feature: feature.toJSON(),
           })
