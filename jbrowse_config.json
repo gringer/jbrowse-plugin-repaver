@@ -1,4 +1,61 @@
 {
+  "assemblies": [
+    {
+      "name": "GCA_004027225.2_bStrHab1.2.pri_genomic",
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "GCA_004027225.2_bStrHab1.2.pri_genomic-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": {
+            "uri": "data/GCA_004027225.2_bStrHab1.2.pri_genomic.fa.gz",
+            "locationType": "UriLocation"
+          },
+          "faiLocation": {
+            "uri": "data/GCA_004027225.2_bStrHab1.2.pri_genomic.fa.gz.fai",
+            "locationType": "UriLocation"
+          },
+          "gziLocation": {
+            "uri": "data/GCA_004027225.2_bStrHab1.2.pri_genomic.fa.gz.gzi",
+            "locationType": "UriLocation"
+          }
+        }
+      }
+    },
+    {
+      "name": "chm13v2.0",
+      "sequence": {
+        "type": "ReferenceSequenceTrack",
+        "trackId": "chm13v2.0-ReferenceSequenceTrack",
+        "adapter": {
+          "type": "BgzipFastaAdapter",
+          "fastaLocation": {
+            "uri": "data/chm13v2.0.fa.gz",
+            "locationType": "UriLocation"
+          },
+          "faiLocation": {
+            "uri": "data/chm13v2.0.fa.gz.fai",
+            "locationType": "UriLocation"
+          },
+          "gziLocation": {
+            "uri": "data/chm13v2.0.fa.gz.gzi",
+            "locationType": "UriLocation"
+          }
+        }
+      }
+    }
+  ],
+  "tracks": [
+    {
+      "type": "FeatureTrack",
+      "name": "Repeat Elements",
+      "adapter": {
+        "type": "RepeatAdapter",
+        "bedtabixLocation": { "uri": "data/human_chm13_repeats_125bp.bed.gz" },
+        "indexLocation": { "uri": "data/human_chm13_repeats_125bp.bed.gz.tbi" }
+      }
+    }
+  ],
   "plugins": [
     {
       "name": "Repaver",
