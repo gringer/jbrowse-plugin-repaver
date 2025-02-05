@@ -50,15 +50,12 @@
   "jbrowse-plugin": {
     "name": "Repaver"
   },
-  "peerDependencies": {
-    "@jbrowse/core": "^2.0.0"
-  },
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-react": "^7.10.4",
     "@emotion/react": "^11.10.4",
     "@jbrowse/cli": "^2.6.1",
-    "@jbrowse/core": "^2.6.1",
+    "@jbrowse/core": "^3.0.1",
     "@jbrowse/development-tools": "^2.1.1",
     "@mui/material": "^5.10.5",
     "@mui/system": "^5.10.5",

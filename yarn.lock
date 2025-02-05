@@ -1086,7 +1086,7 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.17.9", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.6", "@babel/runtime@^7.23.9", "@babel/runtime@^7.24.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.18.3", "@babel/runtime@^7.20.6", "@babel/runtime@^7.23.9", "@babel/runtime@^7.24.7", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
   version "7.24.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.24.7.tgz#f4f0d5530e8dbdf59b3451b9b3e594b6ba082e12"
   integrity sha512-UwgBRMjJP+xv857DCngvqXI3Iq6J4v0wXmwc6sapg+zyhbwmQX67LUEFrkK5tbyJ30jGuG3ZvWpBiB9LCy1kWw==
@@ -1442,16 +1442,6 @@
     quick-lru "^4.0.0"
     rxjs "^7.8.0"
 
-"@gmod/bgzf-filehandle@^1.4.3":
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/@gmod/bgzf-filehandle/-/bgzf-filehandle-1.4.7.tgz#de2b1fbf2f56e15c31179bd42cd8bce7a8d1ada8"
-  integrity sha512-f/oXwWwsBe4nYN82mQ+Sz++/zH6EOyBCRqxFdv04SBkreQvilf3cql6F8ZAMMBq1f/abzBc0U0zJIMF9CLM7QQ==
-  dependencies:
-    es6-promisify "^7.0.0"
-    generic-filehandle "^3.0.0"
-    long "^4.0.0"
-    pako "^1.0.11"
-
 "@gmod/bgzf-filehandle@^2.0.1":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@gmod/bgzf-filehandle/-/bgzf-filehandle-2.0.4.tgz#64f88ff6ad48efaf69641e796db87f24bf5da9ab"
@@ -1459,14 +1449,6 @@
   dependencies:
     generic-filehandle2 "^1.0.0"
     pako "^1.0.11"
-
-"@gmod/http-range-fetcher@^3.0.0":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@gmod/http-range-fetcher/-/http-range-fetcher-3.0.3.tgz#eda1c9f5f2399ce95e947e05c464d8f8f910b6a2"
-  integrity sha512-VKFgGq+hBDNQzbyUgCLpNlzGJnHofUEUMyk9UX2dlNHpyif6mTXVAAAMs6cHI1z9L2bJTivZ23GyOvzaxEI8XQ==
-  dependencies:
-    abortcontroller-polyfill "^1.2.9"
-    quick-lru "^4.0.0"
 
 "@gmod/http-range-fetcher@^4.0.0":
   version "4.0.0"
@@ -1558,40 +1540,6 @@
     node-fetch-native "^1.6.4"
     rimraf "^5.0.0"
     tslib "^2.3.1"
-
-"@jbrowse/core@^2.6.1":
-  version "2.12.3"
-  resolved "https://registry.yarnpkg.com/@jbrowse/core/-/core-2.12.3.tgz#2ff29368568bd16655e5231747ac916d1fde8a9a"
-  integrity sha512-3ZS9rWjE8Kv5rnBbq7itk3bFvACkXz5PXwl1TDUF7mqLSld5COWZAKwzENrzFV9QA6TZoBf7khJ0vReSJ30RxA==
-  dependencies:
-    "@babel/runtime" "^7.17.9"
-    "@gmod/bgzf-filehandle" "^1.4.3"
-    "@gmod/http-range-fetcher" "^3.0.0"
-    "@mui/icons-material" "^5.0.1"
-    "@mui/x-data-grid" "^7.0.0"
-    "@types/clone" "^2.0.0"
-    abortable-promise-cache "^1.5.0"
-    canvas-sequencer "^3.1.0"
-    canvas2svg "^1.0.16"
-    clone "^2.1.2"
-    colord "^2.9.3"
-    copy-to-clipboard "^3.3.1"
-    deepmerge "^4.2.2"
-    detect-node "^2.1.0"
-    dompurify "^3.0.0"
-    escape-html "^1.0.3"
-    fast-deep-equal "^3.1.3"
-    generic-filehandle "^3.0.0"
-    is-object "^1.0.1"
-    jexl "^2.3.0"
-    librpc-web-mod "^1.1.5"
-    load-script "^2.0.0"
-    material-ui-popup-state "^5.0.0"
-    rbush "^3.0.1"
-    react-error-boundary "^4.0.3"
-    serialize-error "^8.0.0"
-    source-map-js "^1.0.2"
-    svg-path-generator "^1.1.0"
 
 "@jbrowse/core@^3.0.1":
   version "3.0.1"
@@ -2011,13 +1959,6 @@
   version "6.4.3"
   resolved "https://registry.yarnpkg.com/@mui/core-downloads-tracker/-/core-downloads-tracker-6.4.3.tgz#aa9506e4d43e02d61fb82e23de9741fd24b22b61"
   integrity sha512-hlyOzo2ObarllAOeT1ZSAusADE5NZNencUeIvXrdQ1Na+FL1lcznhbxfV5He1KqGiuR8Az3xtCUcYKwMVGFdzg==
-
-"@mui/icons-material@^5.0.1":
-  version "5.16.0"
-  resolved "https://registry.yarnpkg.com/@mui/icons-material/-/icons-material-5.16.0.tgz#5269fda922fe5e6db3577ec497e8b987195606ef"
-  integrity sha512-6ISoOhkp9w5gD0PEW9JklrcbyARDkFWNTBdwXZ1Oy5IGlyu9B0zG0hnUIe4H17IaF1Vgj6C8VI+v4tkSdK0veg==
-  dependencies:
-    "@babel/runtime" "^7.23.9"
 
 "@mui/icons-material@^6.0.0":
   version "6.4.3"
@@ -2476,11 +2417,6 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
-"@types/clone@^2.0.0":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@types/clone/-/clone-2.1.4.tgz#9680f886c935dcf596273f1218abb71efb01531a"
-  integrity sha512-NKRWaEGaVGVLnGLB2GazvDaZnyweW9FJLLFL5LhywGJB3aqGMT9R/EUoJoSRP4nzofYnZysuDmrEJtJdAqUOtQ==
-
 "@types/d3-color@*", "@types/d3-color@^3.1.3":
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/@types/d3-color/-/d3-color-3.1.3.tgz#368c961a18de721da8200e80bf3943fb53136af2"
@@ -2780,18 +2716,6 @@ abab@^2.0.6:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.6.tgz#41b80f2c871d19686216b82309231cfd3cb3d291"
   integrity sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==
-
-abortable-promise-cache@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/abortable-promise-cache/-/abortable-promise-cache-1.5.0.tgz#33b6716a26bb0ef3b8104724d6ee828bd94a78c4"
-  integrity sha512-S2FfvU1As7Fve6ObCEsuOiE22UR7k91ytM+m4bzG6eAf+fb4TOAVEGZGAzlRfCo7/bZamL9d3ZeXc08MPm3azA==
-  dependencies:
-    abortcontroller-polyfill "^1.2.9"
-
-abortcontroller-polyfill@^1.2.9:
-  version "1.7.5"
-  resolved "https://registry.yarnpkg.com/abortcontroller-polyfill/-/abortcontroller-polyfill-1.7.5.tgz#6738495f4e901fbb57b6c0611d0c75f76c485bed"
-  integrity sha512-JMJ5soJWP18htbbxJjG7bG6yuI6pRhgJ0scHHTfkUjf6wjP912xZWvM+A4sJK3gqd9E8fcPbDnOefbA9Th/FIQ==
 
 abstract-leveldown@~0.12.0, abstract-leveldown@~0.12.1:
   version "0.12.4"
@@ -4462,11 +4386,6 @@ cliui@^8.0.1:
     strip-ansi "^6.0.1"
     wrap-ansi "^7.0.0"
 
-clone@^2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.2.tgz#1b7f4b9f591f1e8f83670401600345a02887435f"
-  integrity sha512-3Pe/CF1Nn94hyhIYpjtiLhdCoEoz0DqQ+988E9gmeEdQZlojxnOb74wctFyuwWQHzqyf9X7C7MG8juUpqBJT8w==
-
 clone@~0.1.9:
   version "0.1.19"
   resolved "https://registry.yarnpkg.com/clone/-/clone-0.1.19.tgz#613fb68639b26a494ac53253e15b1a6bd88ada85"
@@ -5257,11 +5176,6 @@ domexception@^4.0.0:
   dependencies:
     webidl-conversions "^7.0.0"
 
-dompurify@^3.0.0:
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-3.1.6.tgz#43c714a94c6a7b8801850f82e756685300a027e2"
-  integrity sha512-cTOAhc36AalkjtBpfG6O8JimdTMWNXjiePT2xQH/ppBGi/4uIpmj8eKyIkMJErXWARyINV/sB38yf8JCLF5pbQ==
-
 dompurify@^3.2.0:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-3.2.4.tgz#af5a5a11407524431456cf18836c55d13441cd8e"
@@ -5501,16 +5415,6 @@ es-to-primitive@^1.2.1:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
-
-es6-promisify@^6.1.1:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-6.1.1.tgz#46837651b7b06bf6fff893d03f29393668d01621"
-  integrity sha512-HBL8I3mIki5C1Cc9QjKUenHtnG0A5/xA8Q/AllRcfiwl2CZFXGK7ddBiCoRwAix4i2KxcQfjtIVcrVbB3vbmwg==
-
-es6-promisify@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/es6-promisify/-/es6-promisify-7.0.0.tgz#9a710008dd6a4ab75a89e280bad787bfb749927b"
-  integrity sha512-ginqzK3J90Rd4/Yz7qRrqUeIpe3TwSXTPPZtPne7tGBPeAaQiU8qt4fpKApnxHcq1AwtUdHVg5P77x/yrggG8Q==
 
 escalade@^3.1.1, escalade@^3.1.2:
   version "3.1.2"
@@ -6161,13 +6065,6 @@ generic-filehandle2@^1.0.0:
   resolved "https://registry.yarnpkg.com/generic-filehandle2/-/generic-filehandle2-1.0.0.tgz#d7a216072467793e1e48c925f97162eab1b82efc"
   integrity sha512-jXfyNk1zhsR0Xf2sLm4vgeYSP1q1XbeSVG0TRSnOCKLb2CojPNJyy57nKi6QWmt83yGSHZGay8qIn7YWyl2V5w==
 
-generic-filehandle@^3.0.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/generic-filehandle/-/generic-filehandle-3.2.0.tgz#f65401ce71bccadb796335495c3d9250185876d4"
-  integrity sha512-tG6ZGpKVQn1N6WLlOFoDZL54wdrBSelY3Mk3R9nTPYas0odoY9LcGvUJmb9jGghFC4hy3WY8EqQUIQk0ni/0jg==
-  dependencies:
-    es6-promisify "^6.1.1"
-
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/gensync/-/gensync-1.0.0-beta.2.tgz#32a6ee76c3d7f52d46b2b1ae5d93fea8580a25e0"
@@ -6784,11 +6681,6 @@ is-number@^7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
-
-is-object@^1.0.1:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/is-object/-/is-object-1.0.2.tgz#a56552e1c665c9e950b4a025461da87e72f86fcf"
-  integrity sha512-2rRIahhZr2UWb45fIOuvZGpFtz0TyOZLf32KxBbSoUCeZR495zCKlWUKKUByk3geS2eAs7ZAABt0Y/Rx0GiQGA==
 
 is-object@~0.1.2:
   version "0.1.2"
@@ -7823,11 +7715,6 @@ log-update@^4.0.0:
     slice-ansi "^4.0.0"
     wrap-ansi "^6.2.0"
 
-long@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
-  integrity sha512-XsP+KhQif4bjX1kbuSiySJFNAehNxgLb6hPRGJ9QsUr8ajHkuXGdrHmFUTUUXhDwVX2R5bY4JNZEwbUiMhV+MA==
-
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -8854,13 +8741,6 @@ react-draggable@^4.4.5:
   dependencies:
     clsx "^1.1.1"
     prop-types "^15.8.1"
-
-react-error-boundary@^4.0.3:
-  version "4.0.13"
-  resolved "https://registry.yarnpkg.com/react-error-boundary/-/react-error-boundary-4.0.13.tgz#80386b7b27b1131c5fbb7368b8c0d983354c7947"
-  integrity sha512-b6PwbdSv8XeOSYvjt8LpgpKrZ0yGdtZokYwkwV2wlcZbxgopHX/hgPl5VgpnoVOWd868n1hktM8Qm4b+02MiLQ==
-  dependencies:
-    "@babel/runtime" "^7.12.5"
 
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
@@ -9961,11 +9841,6 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
-
-svg-path-generator@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/svg-path-generator/-/svg-path-generator-1.1.0.tgz#058ad4a095eabbc5e2e91b66299e5063e4ac9afb"
-  integrity sha512-eapn3syFa828HJRI3Wv+ceq7K/TUo/wA31w5oyerA3CNz02YkLM8aSjXA851+0qhc1ibihiJHxy54eacm2/euQ==
 
 symbol-tree@^3.2.4:
   version "3.2.4"

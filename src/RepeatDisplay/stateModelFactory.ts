@@ -6,9 +6,9 @@ import {
   isSessionModelWithWidgets,
 } from '@jbrowse/core/util'
 
-import type PluginManager from '@jbrowse/core/PluginManager'
-import type { Feature } from '@jbrowse/core/util'
-import type WigglePlugin from '@jbrowse/plugin-wiggle'
+import PluginManager from '@jbrowse/core/PluginManager'
+import { Feature } from '@jbrowse/core/util'
+import WigglePlugin from '@jbrowse/plugin-wiggle'
 
 export function stateModelFactory(
   pluginManager: PluginManager,

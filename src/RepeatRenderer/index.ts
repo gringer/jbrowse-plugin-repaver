@@ -2,7 +2,7 @@ import rendererFactory from './RepeatRenderer'
 import RepeatRendering from './RepeatRendering'
 import { configSchema } from './configSchema'
 
-import type PluginManager from '@jbrowse/core/PluginManager'
+import PluginManager from '@jbrowse/core/PluginManager'
 
 export default function RepeatRendererF(pluginManager: PluginManager) {
   pluginManager.addRendererType(() => {
