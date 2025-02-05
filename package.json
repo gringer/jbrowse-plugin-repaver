@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
+    "@babel/preset-react": "^7.10.4",
     "@emotion/react": "^11.10.4",
     "@jbrowse/cli": "^2.6.1",
     "@jbrowse/core": "^2.6.1",
@@ -105,5 +106,10 @@
   "description": "REpetitive PAttern VisualisER for BED files created using Hashasher",
   "repository": "git@github.com:gringer/jbrowse-plugin-repaver.git",
   "author": "David Eccles (gringer) <github@gringer.org>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@jbrowse/plugin-linear-genome-view": "^3.0.1",
+    "@jbrowse/plugin-wiggle": "^3.0.1",
+    "@types/rbush": "^4.0.0"
+  }
 }
