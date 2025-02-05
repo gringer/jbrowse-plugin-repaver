@@ -45,6 +45,41 @@
       }
     }
   ],
+  "tracks": [
+{
+  "type": "FeatureTrack",
+  "trackId": "human_chm13_repeats_125bp.bed.gz-1738746482758-sessionTrack",
+  "name": "human_chm13_repeats_125bp.bed.gz",
+  "assemblyNames": [
+    "chm13v2.0"
+  ],
+  "adapter": {
+    "type": "BedTabixAdapter",
+    "bedGzLocation": {
+      "locationType": "UriLocation",
+      "name": "human_chm13_repeats_125bp.bed.gz",
+      "uri": "data/human_chm13_repeats_125bp.bed.gz"
+    },
+    "index": {
+      "location": {
+        "locationType": "UriLocation",
+        "name": "human_chm13_repeats_125bp.bed.gz.tbi",
+        "uri": "data/human_chm13_repeats_125bp.bed.gz.tbi"
+      }
+    }
+  },
+  "displays": [
+    {
+      "type": "LinearBasicDisplay",
+      "displayId": "human_chm13_repeats_125bp.bed.gz-1738746482758-sessionTrack-LinearBasicDisplay"
+    },
+    {
+      "type": "LinearArcDisplay",
+      "displayId": "human_chm13_repeats_125bp.bed.gz-1738746482758-sessionTrack-LinearArcDisplay"
+    }
+  ]
+}
+],
   "plugins": [
     {
       "name": "Repaver",

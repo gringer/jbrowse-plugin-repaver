@@ -55,7 +55,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
-    "@babel/preset-react": "^7.10.4",
     "@emotion/react": "^11.10.4",
     "@jbrowse/cli": "^2.6.1",
     "@jbrowse/core": "^2.6.1",
