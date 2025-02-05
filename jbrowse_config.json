@@ -46,40 +46,42 @@
     }
   ],
   "tracks": [
-{
-  "type": "FeatureTrack",
-  "trackId": "human_chm13_repeats_125bp.bed.gz-1738746482758-sessionTrack",
-  "name": "human_chm13_repeats_125bp.bed.gz",
-  "assemblyNames": [
-    "chm13v2.0"
-  ],
-  "adapter": {
-    "type": "BedTabixAdapter",
-    "bedGzLocation": {
-      "locationType": "UriLocation",
+    {
+      "type": "FeatureTrack",
+      "trackId": "human_chm13_repeats_125bp.bed.gz-1738746482758-sessionTrack",
       "name": "human_chm13_repeats_125bp.bed.gz",
-      "uri": "data/human_chm13_repeats_125bp.bed.gz"
-    },
-    "index": {
+      "assemblyNames": [
+        "chm13v2.0"
+      ],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": {
+          "locationType": "UriLocation",
+          "name": "human_chm13_repeats_125bp.bed.gz",
+          "uri": "data/human_chm13_repeats_125bp.bed.gz"
+        },
+        "index": {
       "location": {
         "locationType": "UriLocation",
         "name": "human_chm13_repeats_125bp.bed.gz.tbi",
         "uri": "data/human_chm13_repeats_125bp.bed.gz.tbi"
       }
+        }
+      },
+      "displays": [
+        {
+          "type": "LinearManhattanDisplay",
+          "displayId": "human_chm13_repeats_125bp.bed.gz-1738746482758-sessionTrack-LinearManhattanDisplay-1738753314476",
+          "renderers": {
+            "LinearManhattanRenderer": {
+              "type": "LinearManhattanRenderer",
+              "color": "jexl:get(feature, 'repeatClass')==\"F\" ? \"#8b000080\" : get(feature, 'repeatClass')==\"R\" ? \"#00A00080\" : get(feature, 'repeatClass')==\"RC\" ? \"#FF7F0080\" : get(feature, 'repeatClass')==\"C\" ? \"#A0900080\" : \"black\""
+            }
+          }
+        }
+      ]
     }
-  },
-  "displays": [
-    {
-      "type": "LinearBasicDisplay",
-      "displayId": "human_chm13_repeats_125bp.bed.gz-1738746482758-sessionTrack-LinearBasicDisplay"
-    },
-    {
-      "type": "LinearArcDisplay",
-      "displayId": "human_chm13_repeats_125bp.bed.gz-1738746482758-sessionTrack-LinearArcDisplay"
-    }
-  ]
-}
-],
+  ],
   "plugins": [
     {
       "name": "Repaver",
