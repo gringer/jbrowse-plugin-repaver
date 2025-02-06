@@ -1,4 +1,5 @@
 import { lazy } from 'react'
+import React from 'react'
 
 import { DisplayType } from '@jbrowse/core/pluggableElementTypes'
 
