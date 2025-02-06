@@ -7,8 +7,6 @@ import { BaseLinearDisplayComponent } from '@jbrowse/plugin-linear-genome-view'
 import PluginManager from '@jbrowse/core/PluginManager'
 import WigglePlugin from '@jbrowse/plugin-wiggle'
 
-import YScaleBar from './YScaleBar'
-
 export default async function RepeatDisplayF(pluginManager: PluginManager) {
   const WiggleP = pluginManager.getPlugin('WigglePlugin') as unknown as WigglePlugin
 
