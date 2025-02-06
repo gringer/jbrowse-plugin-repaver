@@ -61,11 +61,11 @@
           "uri": "data/human_chm13_repeats_125bp.bed.gz"
         },
         "index": {
-      "location": {
-        "locationType": "UriLocation",
-        "name": "human_chm13_repeats_125bp.bed.gz.tbi",
-        "uri": "data/human_chm13_repeats_125bp.bed.gz.tbi"
-      }
+          "location": {
+            "locationType": "UriLocation",
+            "name": "human_chm13_repeats_125bp.bed.gz.tbi",
+            "uri": "data/human_chm13_repeats_125bp.bed.gz.tbi"
+          }
         }
       },
       "displays": [

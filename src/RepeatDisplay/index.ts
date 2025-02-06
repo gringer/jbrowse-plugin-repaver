@@ -2,14 +2,17 @@ import { DisplayType } from '@jbrowse/core/pluggableElementTypes'
 
 import { configSchemaFactory } from './configSchemaFactory'
 import { stateModelFactory } from './stateModelFactory'
+import { BaseLinearDisplayComponent } from '@jbrowse/plugin-linear-genome-view'
 
 import PluginManager from '@jbrowse/core/PluginManager'
 import WigglePlugin from '@jbrowse/plugin-wiggle'
 
-export default function RepeatDisplayF(pluginManager: PluginManager) {
-  const WigglePlugin = pluginManager.getPlugin('WigglePlugin') as unknown as WigglePlugin
+import YScaleBar from './YScaleBar'
 
-  const { LinearWiggleDisplayReactComponent } = WigglePlugin.exports
+export default async function RepeatDisplayF(pluginManager: PluginManager) {
+  const WiggleP = pluginManager.getPlugin('WigglePlugin') as unknown as WigglePlugin
+
+  const RepeatDisplayReactComponent = WiggleP.exports.LinearWiggleDisplayReactComponent
 
   pluginManager.addDisplayType(() => {
     const configSchema = configSchemaFactory(pluginManager)
@@ -19,7 +22,8 @@ export default function RepeatDisplayF(pluginManager: PluginManager) {
       stateModel: stateModelFactory(pluginManager, configSchema),
       trackType: 'FeatureTrack',
       viewType: 'LinearGenomeView',
-      ReactComponent: LinearWiggleDisplayReactComponent,
+      //ReactComponent: BaseLinearDisplayComponent,
+      ReactComponent: RepeatDisplayReactComponent,
     })
   })
 }
