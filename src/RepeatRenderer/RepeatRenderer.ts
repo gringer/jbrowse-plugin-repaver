@@ -114,11 +114,32 @@ export default function rendererFactory(pluginManager: PluginManager) {
       }
       ctx.lineWidth = 4
       ctx.lineCap = "round"
+      const featureCount = features.size
+      // If there are fewer than 5000 features, draw them all
+      const sampleFeatureCount = ((featureCount < 5000) ?
+        1 : Math.floor(featureCount / 5000))
+      var featureCountInc = 0
+      var lastFeatureBp = -1
+      var lastY = -5000
       for (const feature of features.values()) {
         if (performance.now() - start > 200) {
           checkStopToken(stopToken)
           start = performance.now()
         }
+        const featureDelta = feature.data.start - lastFeatureBp
+        // Subsample data if there are too many features, but preserve
+        // the first vertical line after skipping
+        if((featureDelta < ((4 * bpPerPx) - 1)) && (featureDelta > 0) &&
+          (++featureCountInc < sampleFeatureCount))
+          {
+            lastY = -5000
+            continue
+          } else {
+            if((featureDelta >= ((4 * bpPerPx) - 1))){
+              lastFeatureBp = feature.data.start
+            }
+            featureCountInc = 0
+          }
         const [leftPx, rightPx] = featureSpanPx(feature, region, bpPerPx)
         const score = feature.get('score') as number
         const y = toY(score)
@@ -148,7 +169,7 @@ export default function rendererFactory(pluginManager: PluginManager) {
 
       if (displayCrossHatches) {
         ctx.lineWidth = 1
-        ctx.strokeStyle = 'rgba(200,200,200,0.8)'
+        ctx.strokeStyle = 'rgba(200,200,200,0.5)'
         values.forEach((tick: number) => {
           ctx.beginPath()
           ctx.moveTo(0, Math.round(toY(tick)))
