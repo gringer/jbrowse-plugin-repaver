@@ -89,7 +89,6 @@ const RepeatDisplayComponent = observer((props: { model: WiggleDisplayModel } ) 
       : 50
   return (
     <div>
-      <h1>Here is some text</h1>
       <div
         ref={ref}
         data-testid={`display-${getConf(model, 'displayId')}`}
@@ -138,18 +137,15 @@ const RepeatDisplayComponent = observer((props: { model: WiggleDisplayModel } ) 
             </>
           </div>
         )}
-        <svg>
-          <rect x="120" width="100" height="100" rx="15" />
-        </svg>
       </div>
-      <div>
       {stats && needsScalebar ? (
-        <svg style={{ position: 'absolute', top: 0, left, pointerEvents: 'none',
-                      height, width: 50, }} >
-          <YScaleBar model={model} logLinSeqLength={logLinTotalBp} />
-        </svg>
+        <div id="scaleBar">
+          <svg style={{ position: 'absolute', top: 0, left, pointerEvents: 'none',
+            height, width: 100 }} >
+            <YScaleBar model={model} logLinSeqLength={logLinTotalBp} />
+          </svg>
+        </div>
       ) : null}
-      </div>
     </div>
   )})
 
