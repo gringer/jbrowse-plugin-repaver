@@ -6,6 +6,12 @@ This JBrowse2 plugin adds a new 'Repeat BED' track type to JBrowse2, which visua
 repetitive elements in sequences, showing distances between the elements via a
 split log/linear scale.
 
+The human Chm13v2.0 repeat track (used in the example JBrowse2 configuration) can be found at this zenodo repository:
+
+https://doi.org/10.5281/zenodo.14809855
+
+Direct link: [here](https://zenodo.org/records/14809855/files/human_chm13_repeats_125bp.bed.gz?download=1)
+
 ## Getting started
 
 ### Development

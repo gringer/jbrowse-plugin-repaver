@@ -80,6 +80,41 @@
           }
         }
       ]
+    },
+    {
+      "type": "FeatureTrack",
+      "trackId": "kakapo_gca_004027225.2_repeats_30bp.bed.gz-1738918282735-sessionTrack",
+      "name": "kakapo_GCA_004027225.2_repeats_30bp.bed.gz",
+      "assemblyNames": [
+        "GCA_004027225.2_bStrHab1.2.pri_genomic"
+      ],
+      "adapter": {
+        "type": "BedTabixAdapter",
+        "bedGzLocation": {
+          "locationType": "UriLocation",
+          "name": "kakapo_GCA_004027225.2_repeats_30bp.bed.gz",
+          "uri": "data/kakapo_GCA_004027225.2_repeats_30bp.bed.gz"
+        },
+        "index": {
+          "location": {
+            "locationType": "UriLocation",
+            "name": "kakapo_GCA_004027225.2_repeats_30bp.bed.gz.tbi",
+            "uri": "data/kakapo_GCA_004027225.2_repeats_30bp.bed.gz.tbi"
+          }
+        }
+      },
+      "displays": [
+        {
+          "type": "RepeatDisplay",
+          "displayId": "kakapo_gca_004027225.2_repeats_30bp.bed.gz-1738918282735-sessionTrack-LinearWiggleDisplay",
+          "renderers": {
+            "RepeatRenderer": {
+              "type": "RepeatRenderer",
+              "color": "jexl:get(feature, 'repeatClass')==\"F\" ? \"#8b000080\" : get(feature, 'repeatClass')==\"R\" ? \"#00A00080\" : get(feature, 'repeatClass')==\"RC\" ? \"#FF7F0080\" : get(feature, 'repeatClass')==\"C\" ? \"#A0900080\" : \"black\""
+            }
+          }
+        }
+      ]
     }
   ],
   "plugins": [
