@@ -110,7 +110,11 @@ const RepeatDisplayComponent = observer((props: { model: WiggleDisplayModel } ) 
                 if (block.type === 'ContentBlock') {
                   const state = blockState.get(block.key)
                   return (
-                    <div id="&lt;ContentBlockComponent block={block} key={key} /&gt;" />
+                    <div style={{ width: block.widthPx }} className={classes.contentBlock}>
+                      {state?.ReactComponent ? (
+                        <state.ReactComponent model={state} />
+                      ) : null}
+                    </div>
                   )
                 }
                 if (block.type === 'ElidedBlock') {
