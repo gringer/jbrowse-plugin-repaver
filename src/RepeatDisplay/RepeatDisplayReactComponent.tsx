@@ -6,6 +6,7 @@ import { observer } from 'mobx-react'
 import { makeStyles } from 'tss-react/mui'
 
 import BaseLinearDisplay from '@jbrowse/plugin-linear-genome-view'
+import type { BaseBlock } from '@jbrowse/core/util/blockTypes'
 import {
   getContainingTrack,
   getContainingView,
@@ -22,6 +23,13 @@ type LGV = LinearGenomeViewModel
 export type WiggleDisplayModel = Instance<ReturnType<typeof stateModelFactory>>
 
 const useStyles = makeStyles()({
+  contentBlock: {
+    position: 'relative',
+    minHeight: '100%',
+    boxSizing: 'border-box',
+    whiteSpace: 'nowrap',
+    overflow: 'hidden',
+  },
   linearBlocks: {
     whiteSpace: 'nowrap',
     textAlign: 'left',
@@ -48,12 +56,27 @@ const useStyles = makeStyles()({
     width: '100%',
     minHeight: '100%',
   },
+  elidedBlock: {
+    minHeight: '100%',
+    boxSizing: 'border-box',
+    backgroundColor: '#999',
+    backgroundImage:
+      'repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(255,255,255,.5) 1px, rgba(255,255,255,.5) 3px)',
+  },
+  interRegionPaddingBlock: {
+    minHeight: '100%',
+    backgroundColor: 'cyan', /* theme.palette.text.disabled  */
+  },
+  boundaryPaddingBlock: {
+    minHeight: '100%',
+    backgroundColor: 'magenta', /* theme.palette.action.disabledBackground  */
+  },
 })
 
 const RepeatDisplayComponent = observer((props: { model: WiggleDisplayModel } ) => {
   const { classes } = useStyles()
   const ref = useRef<HTMLDivElement>(null)
-  const { model, children } = props
+  const { model } = props
   const { stats, height, needsScalebar, blockDefinitions,
     blockState, DisplayMessageComponent } = model
   const viewModel = getContainingView(model) as LGV
@@ -81,11 +104,36 @@ const RepeatDisplayComponent = observer((props: { model: WiggleDisplayModel } ) 
               left: blockDefinitions.offsetPx - viewModel.offsetPx,
             }}
           >
-            <div id="&lt;RenderedBlocks model={model} /&gt;">
-            </div>
+            <>
+              {blockDefinitions.map(block => {
+                const key = `${model.id}-${block.key}`
+                if (block.type === 'ContentBlock') {
+                  const state = blockState.get(block.key)
+                  return (
+                    <div id="&lt;ContentBlockComponent block={block} key={key} /&gt;" />
+                  )
+                }
+                if (block.type === 'ElidedBlock') {
+                  return (
+                    <div className={classes.elidedBlock} style={{ width:block.widthPx }} />
+                  )
+                }
+                if (block.type === 'InterRegionPaddingBlock') {
+                  return (
+                    <div style={{ background: 'none', width:block.widthPx }}
+                      className={
+                        block.variant === 'boundary'
+                          ? classes.boundaryPaddingBlock
+                          : classes.interRegionPaddingBlock
+                      } >
+                    </div>
+                  )
+                }
+                throw new Error(`invalid block type ${JSON.stringify(block)}`)
+              })}
+            </>
           </div>
         )}
-        {children}
         <svg>
           <rect x="120" width="100" height="100" rx="15" />
         </svg>
