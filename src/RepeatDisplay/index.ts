@@ -1,4 +1,3 @@
-import { lazy } from 'react'
 import React from 'react'
 
 import { DisplayType } from '@jbrowse/core/pluggableElementTypes'
@@ -6,14 +5,13 @@ import { DisplayType } from '@jbrowse/core/pluggableElementTypes'
 import { configSchemaFactory } from './configSchemaFactory'
 import { stateModelFactory } from './stateModelFactory'
 
-import WigglePlugin from '@jbrowse/plugin-wiggle'
+import { BaseLinearDisplayComponent } from '@jbrowse/plugin-linear-genome-view'
+
+import RepeatDisplayReactComponent from './RepeatDisplayReactComponent'
 
 import PluginManager from '@jbrowse/core/PluginManager'
 
 export default function RepeatDisplayF(pluginManager: PluginManager) {
-
-  const WiggleP = pluginManager.getPlugin('WigglePlugin') as unknown as WigglePlugin
-  const RepeatDisplayReactComponent = WiggleP.exports.LinearWiggleDisplayReactComponent
 
   pluginManager.addDisplayType(() => {
    
