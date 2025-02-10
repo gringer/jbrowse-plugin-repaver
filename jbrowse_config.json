@@ -72,9 +72,11 @@
         {
           "type": "RepeatDisplay",
           "displayId": "human_chm13_repeats_125bp.bed.gz-repeatDisplay",
+          "minScore": 0,
           "renderers": {
             "RepeatRenderer": {
-              "type": "RepeatRenderer"
+              "type": "RepeatRenderer",
+              "displayStyle": "profile"
             }
           }
         }
@@ -106,9 +108,11 @@
         {
           "type": "RepeatDisplay",
           "displayId": "kakapo_gca_004027225.2_repeats_30bp.bed.gz-1738918282735-sessionTrack-LinearWiggleDisplay",
+          "minScore": 0,
           "renderers": {
             "RepeatRenderer": {
-              "type": "RepeatRenderer"
+              "type": "RepeatRenderer",
+              "displayStyle": "profile"
             }
           }
         }
