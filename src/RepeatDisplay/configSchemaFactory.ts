@@ -21,6 +21,7 @@ export function configSchemaFactory(pluginManager: PluginManager) {
         type: 'stringEnum',
         defaultValue: 'local',
         model: types.enumeration('Autoscale type', [
+          'none',
           'global',
           'local',
           'globalsd',

@@ -74,8 +74,7 @@
           "displayId": "human_chm13_repeats_125bp.bed.gz-repeatDisplay",
           "renderers": {
             "RepeatRenderer": {
-              "type": "RepeatRenderer",
-              "color": "jexl:get(feature, 'repeatClass')==\"F\" ? \"#8b000080\" : get(feature, 'repeatClass')==\"R\" ? \"#00A00080\" : get(feature, 'repeatClass')==\"RC\" ? \"#FF7F0080\" : get(feature, 'repeatClass')==\"C\" ? \"#A0900080\" : \"black\""
+              "type": "RepeatRenderer"
             }
           }
         }
@@ -109,8 +108,7 @@
           "displayId": "kakapo_gca_004027225.2_repeats_30bp.bed.gz-1738918282735-sessionTrack-LinearWiggleDisplay",
           "renderers": {
             "RepeatRenderer": {
-              "type": "RepeatRenderer",
-              "color": "jexl:get(feature, 'repeatClass')==\"F\" ? \"#8b000080\" : get(feature, 'repeatClass')==\"R\" ? \"#00A00080\" : get(feature, 'repeatClass')==\"RC\" ? \"#FF7F0080\" : get(feature, 'repeatClass')==\"C\" ? \"#A0900080\" : \"black\""
+              "type": "RepeatRenderer"
             }
           }
         }

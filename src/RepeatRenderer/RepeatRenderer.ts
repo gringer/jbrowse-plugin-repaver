@@ -2,11 +2,7 @@ import { readConfObject } from '@jbrowse/core/configuration'
 import { featureSpanPx } from '@jbrowse/core/util'
 import RBush from 'rbush'
 
-import {
-  scaleLinear,
-  scaleLog,
-  scaleQuantize,
-} from '@mui/x-charts-vendor/d3-scale'
+import { scaleLinear } from '@mui/x-charts-vendor/d3-scale'
 
 import type PluginManager from '@jbrowse/core/PluginManager'
 import type WigglePlugin from '@jbrowse/plugin-wiggle'
@@ -42,25 +38,12 @@ function getScale({
   pivotValue,
   inverted,
 }: ScaleOpts) {
-  let scale:
-    | ReturnType<typeof scaleLinear<number>>
-    | ReturnType<typeof scaleLog<number>>
-    | ReturnType<typeof scaleQuantize<number>>
+  let scale: ReturnType<typeof scaleLinear<number>>
   const [min, max] = domain
   if (min === undefined || max === undefined) {
     throw new Error('invalid domain')
   }
-  if (scaleType === 'linear') {
-    scale = scaleLinear()
-  } else if (scaleType === 'log') {
-    scale = scaleLog().base(2)
-  } else if (scaleType === 'quantize') {
-    scale = scaleQuantize()
-  } else if (scaleType === 'repeat') {
-    scale = scaleLinear()
-  } else {
-    throw new Error('undefined scaleType')
-  }
+  scale = scaleLinear()
   scale.domain(pivotValue !== undefined ? [min, pivotValue, max] : [min, max])
   scale.nice()
 
@@ -96,6 +79,7 @@ export default function rendererFactory(pluginManager: PluginManager) {
       const height = unadjustedHeight - YSCALEBAR_LABEL_OFFSET * 2
       const width = (region.end - region.start) / bpPerPx
       const rbush = new RBush<any>()
+      const flipScore = (config.displayStyle.value === "profile")
 
       const scale = getScale({
         ...scaleOpts,
@@ -107,13 +91,14 @@ export default function rendererFactory(pluginManager: PluginManager) {
       checkStopToken(stopToken)
       let lastRenderedBlobX = 0
       let lastRenderedBlobY = 0
-      const { isCallback } = config.color
-      if (!isCallback) {
-        ctx.fillStyle = config.color.value
-        ctx.strokeStyle = config.color.value
-      }
       ctx.lineWidth = 4
       ctx.lineCap = "round"
+      const repeatColours: ReadonlyMap<string, string> = new Map([
+        ["F+", config.F1colour.value], ["F-", config.F2colour.value],
+        ["R+", config.R1colour.value], ["R-", config.R2colour.value],
+        ["C+", config.C1colour.value], ["C-", config.C2colour.value],
+        ["RC+",config.RC1colour.value],["RC-",config.RC2colour.value]
+      ]);
       const featureCount = features.size
       // If there are fewer than 5000 features, draw them all
       const sampleFeatureCount = ((featureCount < 5000) ?
@@ -129,28 +114,28 @@ export default function rendererFactory(pluginManager: PluginManager) {
         const featureDelta = feature.data.start - lastFeatureBp
         // Subsample data if there are too many features, but preserve
         // the first vertical line after skipping
-        if((featureDelta < ((4 * bpPerPx) - 1)) && (featureDelta > 0) &&
+        if((featureDelta < ((10 * bpPerPx) - 1)) && (featureDelta > 0) &&
           (++featureCountInc < sampleFeatureCount))
           {
             lastY = -5000
             continue
           } else {
-            if((featureDelta >= ((4 * bpPerPx) - 1))){
+            if((featureDelta >= ((10 * bpPerPx) - 1))){
               lastFeatureBp = feature.data.start
             }
             featureCountInc = 0
           }
         const [leftPx, rightPx] = featureSpanPx(feature, region, bpPerPx)
         const score = feature.get('score') as number
-        const y = toY(score)
+        const repeatDir: string = feature.get('repeatClass') + feature.get('direction')
+        const y = toY(score * (flipScore && (score < 0) ? -1 : 1))
+        // Note: the pixel output for featureSpanPx is rounded to 0.1 px
         if (
           Math.abs(leftPx - lastRenderedBlobX) > 1 ||
-          Math.abs(y - lastRenderedBlobY) > 1
+            Math.abs(y - lastRenderedBlobY) > 1
         ) {
-          if (isCallback) {
-            ctx.fillStyle = readConfObject(config, 'color', { feature })
-            ctx.strokeStyle = readConfObject(config, 'color', { feature })
-          }
+          ctx.fillStyle = repeatColours.get(repeatDir) as string
+          ctx.strokeStyle = repeatColours.get(repeatDir) as string
           ctx.beginPath()
           ctx.moveTo(leftPx, y)
           ctx.lineTo(rightPx, y)
